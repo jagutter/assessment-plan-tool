@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Collection and Analysis Module</title>
+</head>
+<body>
+    <div class="module-header">
+        <h2>5. Data Collection and Analysis Module</h2>
+        <p class="module-description">Collecting and analyzing assessment data is essential for understanding student achievement of learning outcomes and identifying opportunities for program improvement. This module guides you through planning and implementing effective data collection and analysis processes.</p>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 1: Planning Data Collection</h3>
+        
+        <div class="info-box">
+            <h4>Data Collection Planning Matrix</h4>
+            <p>For each learning outcome, document your data collection approach:</p>
+        </div>
+        
+        <div class="table-container">
+            <table id="data-collection-matrix" class="data-collection-table">
+                <thead>
+                    <tr>
+                        <th>Learning Outcome</th>
+                        <th>Assessment Method</th>
+                        <th>Data Source</th>
+                        <th>Collection Point</th>
+                        <th>Responsible Party</th>
+                        <th>Collection Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select id="outcome-select-1" class="outcome-select">
+                                <option value="">Select outcome</option>
+                                <!-- Options will be populated from previous module -->
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" id="method-1" placeholder="Assessment method">
+                        </td>
+                        <td>
+                            <input type="text" id="source-1" placeholder="Data source">
+                        </td>
+                        <td>
+                            <input type="text" id="point-1" placeholder="Collection point">
+                        </td>
+                        <td>
+                            <input type="text" id="responsible-1" placeholder="Responsible party">
+                        </td>
+                        <td>
+                            <select id="frequency-1">
+                                <option value="">Select frequency</option>
+                                <option value="annual">Annual</option>
+                                <option value="biannual">Biannual</option>
+                                <option value="semester">Every semester</option>
+                                <option value="cycle">Program review cycle</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="outcome-select-2" class="outcome-select">
+                                <option value="">Select outcome</option>
+                                <!-- Options will be populated from previous module -->
+                            </select>
+                        </td>
+                        <td>
+                            <input type="text" id="method-2" placeholder="Assessment method">
+                        </td>
+                        <td>
+                            <input type="text" id="source-2" placeholder="Data source">
+                        </td>
+                        <td>
+                            <input type="text" id="point-2" placeholder="Collection point">
+                        </td>
+                        <td>
+                            <input type="text" id="responsible-2" placeholder="Responsible party">
+                        </td>
+                        <td>
+                            <select id="frequency-2">
+                                <option value="">Select frequency</option>
+                                <option value="annual">Annual</option>
+                                <option value="biannual">Biannual</option>
+                                <option value="semester">Every semester</option>
+                                <option value="cycle">Program review cycle</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <button id="add-row-btn" class="secondary-btn">+ Add Row</button>
+        
+        <div class="example-box">
+            <h4>Example Data Collection Plan (Engineering Program):</h4>
+            <table class="example-table">
+                <thead>
+                    <tr>
+                        <th>Learning Outcome</th>
+                        <th>Assessment Method</th>
+                        <th>Data Source</th>
+                        <th>Collection Point</th>
+                        <th>Responsible Party</th>
+                        <th>Collection Frequency</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Design solutions to complex engineering problems</td>
+                        <td>Design project evaluation</td>
+                        <td>Senior capstone projects</td>
+                        <td>End of final semester</td>
+                        <td>Capstone coordinator</td>
+                        <td>Annual (Spring)</td>
+                    </tr>
+                    <tr>
+                        <td>Apply mathematical principles to engineering problems</td>
+                        <td>Embedded exam questions</td>
+                        <td>Core mathematics courses</td>
+                        <td>Midterm and final exams</td>
+                        <td>Course instructors</td>
+                        <td>Each semester</td>
+                    </tr>
+                    <tr>
+                        <td>Communicate technical information effectively</td>
+                        <td>Presentation rubric scores</td>
+                        <td>Technical communication course</td>
+                        <td>Final presentations</td>
+                        <td>Communication faculty</td>
+                        <td>Annual (Fall)</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="info-box">
+            <h4>Data Management Considerations:</h4>
+            <ul>
+                <li><strong>Storage location</strong>: Where will assessment data be stored?</li>
+                <li><strong>Access permissions</strong>: Who will have access to the data?</li>
+                <li><strong>Anonymization</strong>: How will student identities be protected?</li>
+                <li><strong>Retention period</strong>: How long will data be kept?</li>
+                <li><strong>Documentation</strong>: How will collection methods be documented?</li>
+            </ul>
+        </div>
+        
+        <div class="form-group">
+            <label for="data-management">Data Management Plan</label>
+            <textarea id="data-management" rows="5" placeholder="Describe how you will manage assessment data, including storage, access, anonymization, retention, and documentation"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 2: Ensuring Data Quality</h3>
+        
+        <div class="info-box">
+            <h4>Data Quality Checklist:</h4>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-validity" class="quality-check">
+                    <label for="check-validity"><strong>Validity</strong>: Does the assessment method actually measure the intended outcome?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-reliability" class="quality-check">
+                    <label for="check-reliability"><strong>Reliability</strong>: Would different evaluators reach similar conclusions using the same criteria?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-actionability" class="quality-check">
+                    <label for="check-actionability"><strong>Actionability</strong>: Will the data collected lead to meaningful insights for improvement?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-efficiency" class="quality-check">
+                    <label for="check-efficiency"><strong>Efficiency</strong>: Is the data collection process manageable with available resources?</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-representativeness" class="quality-check">
+                    <label for="check-representativeness"><strong>Representativeness</strong>: Does the sample adequately represent the student population?</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h4>Strategies for Improving Data Quality:</h4>
+            <ul>
+                <li><strong>Calibration sessions</strong> where multiple evaluators assess the same work samples</li>
+                <li><strong>Pilot testing</strong> assessment instruments before full implementation</li>
+                <li><strong>Clear documentation</strong> of data collection procedures</li>
+                <li><strong>Training</strong> for all individuals involved in assessment</li>
+                <li><strong>Multiple measures</strong> for each outcome to triangulate findings</li>
+            </ul>
+        </div>
+        
+        <div class="form-group">
+            <label for="quality-strategies">Data Quality Strategies</label>
+            <textarea id="quality-strategies" rows="4" placeholder="Describe specific strategies you will use to ensure the quality of your assessment data"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 3: Analyzing Assessment Data</h3>
+        
+        <div class="info-box">
+            <h4>Quantitative Analysis Approaches:</h4>
+            <ul>
+                <li><strong>Descriptive statistics</strong>: Calculate means, medians, ranges, and standard deviations</li>
+                <li><strong>Performance distributions</strong>: Determine percentage of students at each performance level</li>
+                <li><strong>Comparative analysis</strong>: Compare results across cohorts, sections, or time periods</li>
+                <li><strong>Correlation analysis</strong>: Examine relationships between different outcomes or factors</li>
+                <li><strong>Disaggregation</strong>: Analyze results by relevant student characteristics</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>Qualitative Analysis Approaches:</h4>
+            <ul>
+                <li><strong>Thematic analysis</strong>: Identify patterns and themes in narrative data</li>
+                <li><strong>Content analysis</strong>: Systematically categorize and quantify qualitative information</li>
+                <li><strong>Case studies</strong>: Examine individual student experiences in depth</li>
+                <li><strong>Narrative analysis</strong>: Analyze stories and reflections for meaning</li>
+                <li><strong>Artifact analysis</strong>: Examine student work products for evidence of learning</li>
+            </ul>
+        </div>
+        
+        <div class="info-box">
+            <h4>Data Visualization Options:</h4>
+            <div class="visualization-options">
+                <div class="visualization-option">
+                    <div class="visualization-icon">📊</div>
+                    <div class="visualization-label">Bar charts</div>
+                    <div class="visualization-desc">Compare performance across outcomes or criteria</div>
+                </div>
+                <div class="visualization-option">
+                    <div class="visualization-icon">📈</div>
+                    <div class="visualization-label">Line graphs</div>
+                    <div class="visualization-desc">Show trends over time</div>
+                </div>
+                <div class="visualization-option">
+                    <div class="visualization-icon">🥧</div>
+                    <div class="visualization-label">Pie charts</div>
+                    <div class="visualization-desc">Display distribution across performance levels</div>
+                </div>
+                <div class="visualization-option">
+                    <div class="visualization-icon">🔥</div>
+                    <div class="visualization-label">Heat maps</div>
+                    <div class="visualization-desc">Visualize curriculum mapping or multi-criteria performance</div>
+                </div>
+                <div class="visualization-option">
+                    <div class="visualization-icon">📡</div>
+                    <div class="visualization-label">Radar charts</div>
+                    <div class="visualization-desc">Compare performance across multiple dimensions</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label>Select Analysis Approaches:</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="analysis-descriptive" name="analysis-approaches">
+                    <label for="analysis-descriptive">Descriptive statistics</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="analysis-distribution" name="analysis-approaches">
+                    <label for="analysis-distribution">Performance distributions</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="analysis-comparative" name="analysis-approaches">
+                    <label for="analysis-comparative">Comparative analysis</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="analysis-correlation" name="analysis-approaches">
+                    <label for="analysis-correlation">Correlation analysis</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="analysis-thematic" name="analysis-approaches">
+                    <label for="analysis-thematic">Thematic analysis</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="analysis-content" name="analysis-approaches">
+                    <label for="analysis-content">Content analysis</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="analysis-plan">Data Analysis Plan</label>
+            <textarea id="analysis-plan" rows="5" placeholder="Describe how you will analyze assessment data for each learning outcome, including specific methods and tools"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 4: Interpreting Results</h3>
+        
+        <div class="info-box">
+            <h4>Interpretation Framework:</h4>
+            <ol>
+                <li><strong>Describe the results</strong>: What patterns or trends do you observe in the data?</li>
+                <li><strong>Compare to expectations</strong>: How do results compare to program standards or targets?</li>
+                <li><strong>Consider context</strong>: What factors might have influenced these results?</li>
+                <li><strong>Identify strengths</strong>: Where are students performing particularly well?</li>
+                <li><strong>Identify areas for improvement</strong>: Where are students struggling or underperforming?</li>
+                <li><strong>Generate hypotheses</strong>: What might explain the observed patterns?</li>
+                <li><strong>Consider implications</strong>: What do these results suggest for program improvement?</li>
+            </ol>
+        </div>
+        
+        <div class="example-box">
+            <h4>Example Interpretation (Psychology Research Methods Outcome):</h4>
+            
+            <div class="interpretation-example">
+                <h5>Results Description:</h5>
+                <p>Analysis of research proposals from the Research Methods course shows that 78% of students met or exceeded expectations for designing appropriate methodology, but only 45% met expectations for identifying limitations of their chosen methods.</p>
+                
+                <h5>Comparison to Expectations:</h5>
+                <p>The program target is 75% of students meeting expectations for all components of research design. While methodology selection exceeds this target, recognition of limitations falls significantly below expectations.</p>
+                
+                <h5>Contextual Factors:</h5>
+                <p>The Research Methods course was recently revised to emphasize practical application, which may have improved methodology selection. However, critical evaluation of methods receives limited attention in the curriculum.</p>
+                
+                <h5>Strengths:</h5>
+                <p>Students demonstrate strong ability to match appropriate methods to research questions and design procedurally sound studies.</p>
+                
+                <h5>Areas for Improvement:</h5>
+                <p>Students struggle to critically evaluate methodological limitations and consider alternative approaches.</p>
+                
+                <h5>Hypotheses:</h5>
+                <ol>
+                    <li>The curriculum may emphasize procedural knowledge over critical evaluation.</li>
+                    <li>Students may lack exposure to methodological critiques in the literature.</li>
+                    <li>Faculty may focus feedback on technical correctness rather than limitations.</li>
+                </ol>
+                
+                <h5>Implications:</h5>
+                <ol>
+                    <li>Incorporate more examples of methodological critiques throughout the curriculum.</li>
+                    <li>Develop specific assignments focused on identifying limitations.</li>
+                    <li>Revise rubrics to place greater emphasis on critical evaluation.</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="interpretation-guidelines">Interpretation Guidelines</label>
+            <textarea id="interpretation-guidelines" rows="5" placeholder="Describe how you will interpret assessment results, including who will be involved and what framework you will use"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 5: Setting Performance Targets</h3>
+        
+        <div class="info-box">
+            <h4>Types of Performance Targets:</h4>
+            
+            <div class="target-type">
+                <h5>Absolute targets:</h5>
+                <p>Specific percentage of students achieving a performance level</p>
+                <p class="example">Example: "85% of students will score 'proficient' or higher on the capstone rubric"</p>
+            </div>
+            
+            <div class="target-type">
+                <h5>Improvement targets:</h5>
+                <p>Increase in performance compared to previous assessment</p>
+                <p class="example">Example: "Average scores will improve by 0.5 points on the 4-point communication rubric"</p>
+            </div>
+            
+            <div class="target-type">
+                <h5>Comparative targets:</h5>
+                <p>Performance relative to peer institutions or external standards</p>
+                <p class="example">Example: "Student performance will meet or exceed the national average on standardized exams"</p>
+            </div>
+            
+            <div class="target-type">
+                <h5>Process targets:</h5>
+                <p>Completion of assessment activities or improvement initiatives</p>
+                <p class="example">Example: "All core courses will implement common rubrics for assessing written communication"</p>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h4>Target Setting Guidelines:</h4>
+            <ul>
+                <li>Base targets on program expectations, disciplinary standards, and institutional priorities</li>
+                <li>Consider historical performance data when available</li>
+                <li>Set challenging but achievable targets</li>
+                <li>Review and adjust targets periodically based on results and changing circumstances</li>
+                <li>Differentiate between minimum acceptable performance and aspirational goals</li>
+            </ul>
+        </div>
+        
+        <div id="performance-targets-container">
+            <div class="form-group">
+                <label for="outcome-target-1">Performance Target for Outcome 1:</label>
+                <select id="outcome-target-select-1" class="outcome-select">
+                    <option value="">Select outcome</option>
+                    <!-- Options will be populated from previous module -->
+                </select>
+                <div class="target-input-row">
+                    <select id="target-type-1">
+                        <option value="">Select target type</option>
+                        <option value="absolute">Absolute target</option>
+                        <option value="improvement">Improvement target</option>
+                        <option value="comparative">Comparative target</option>
+                        <option value="process">Process target</option>
+                    </select>
+                    <input type="text" id="target-value-1" placeholder="Enter specific target">
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="outcome-target-2">Performance Target for Outcome 2:</label>
+                <select id="outcome-target-select-2" class="outcome-select">
+                    <option value="">Select outcome</option>
+                    <!-- Options will be populated from previous module -->
+                </select>
+                <div class="target-input-row">
+                    <select id="target-type-2">
+                        <option value="">Select target type</option>
+                        <option value="absolute">Absolute target</option>
+                        <option value="improvement">Improvement target</option>
+                        <option value="comparative">Comparative target</option>
+                        <option value="process">Process target</option>
+                    </select>
+                    <input type="text" id="target-value-2" placeholder="Enter specific target">
+                </div>
+            </div>
+        </div>
+        
+        <button id="add-target-btn" class="secondary-btn">+ Add Another Target</button>
+    </div>
+
+    <div class="module-section">
+        <h3>Next Steps</h3>
+        <p>After collecting and analyzing assessment data, you'll use the results to inform program improvements. The Action Planning module will guide you through this process.</p>
+    </div>
+</body>
+</html>

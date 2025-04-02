@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Mapping Module</title>
+</head>
+<body>
+    <div class="module-header">
+        <h2>3. Curriculum Mapping Module</h2>
+        <p class="module-description">Curriculum mapping is a visual representation of how your program's courses contribute to student achievement of learning outcomes. This module guides you through creating a comprehensive curriculum map that identifies where outcomes are introduced, reinforced, and mastered across your program.</p>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 1: Understanding Curriculum Mapping</h3>
+        
+        <div class="info-box">
+            <h4>Purpose of Curriculum Mapping</h4>
+            <p>Curriculum mapping serves several important functions:</p>
+            <ol>
+                <li><strong>Ensures comprehensive coverage</strong> of all learning outcomes across the curriculum</li>
+                <li><strong>Identifies gaps or redundancies</strong> in outcome coverage</li>
+                <li><strong>Shows progression</strong> of student learning throughout the program</li>
+                <li><strong>Facilitates communication</strong> among faculty about curriculum design</li>
+                <li><strong>Guides assessment planning</strong> by identifying key points for data collection</li>
+                <li><strong>Supports curriculum review</strong> by visualizing the relationship between courses and outcomes</li>
+            </ol>
+        </div>
+        
+        <div class="info-box">
+            <h4>Curriculum Map Components</h4>
+            <p>A complete curriculum map includes:</p>
+            <ul>
+                <li><strong>Program learning outcomes</strong> listed as column headers</li>
+                <li><strong>Required courses</strong> listed as row headers (typically in sequence)</li>
+                <li><strong>Indicators</strong> showing the relationship between each course and outcome</li>
+                <li><strong>Legend</strong> explaining the meaning of indicators used in the map</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 2: Selecting Mapping Indicators</h3>
+        
+        <div class="form-group">
+            <label>Choose the indicator system that best represents how your courses address program learning outcomes:</label>
+            
+            <div class="radio-group">
+                <div class="radio-item">
+                    <input type="radio" id="indicator-basic" name="indicator-system" value="basic" checked>
+                    <label for="indicator-basic"><strong>Basic Indicators (Presence/Absence)</strong></label>
+                    <div class="indicator-description">
+                        <ul>
+                            <li><strong>✓</strong> = The course addresses this outcome</li>
+                            <li><strong>blank</strong> = The course does not address this outcome</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="radio-item">
+                    <input type="radio" id="indicator-irm" name="indicator-system" value="irm">
+                    <label for="indicator-irm"><strong>Developmental Indicators (I-R-M)</strong></label>
+                    <div class="indicator-description">
+                        <ul>
+                            <li><strong>I</strong> = Introduced: Students are introduced to the knowledge, skill, or value</li>
+                            <li><strong>R</strong> = Reinforced: Students develop and practice the knowledge, skill, or value</li>
+                            <li><strong>M</strong> = Mastered: Students demonstrate mastery of the knowledge, skill, or value</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="radio-item">
+                    <input type="radio" id="indicator-assessment" name="indicator-system" value="assessment">
+                    <label for="indicator-assessment"><strong>Assessment Indicators</strong></label>
+                    <div class="indicator-description">
+                        <ul>
+                            <li><strong>A</strong> = The course includes formal assessment of this outcome</li>
+                            <li><strong>F</strong> = The course includes formative assessment of this outcome</li>
+                            <li><strong>S</strong> = The course includes summative assessment of this outcome</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="radio-item">
+                    <input type="radio" id="indicator-emphasis" name="indicator-system" value="emphasis">
+                    <label for="indicator-emphasis"><strong>Emphasis Indicators</strong></label>
+                    <div class="indicator-description">
+                        <ul>
+                            <li><strong>P</strong> = Primary emphasis: The outcome is a primary focus of the course</li>
+                            <li><strong>S</strong> = Secondary emphasis: The outcome is addressed but not a primary focus</li>
+                            <li><strong>M</strong> = Minimal emphasis: The outcome is touched upon briefly</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 3: Creating Your Curriculum Map</h3>
+        
+        <div class="form-group">
+            <label for="program-outcomes-input">Enter Your Program Learning Outcomes</label>
+            <p class="help-text">Enter the abbreviated titles of your program learning outcomes (e.g., "Critical Thinking", "Communication")</p>
+            
+            <div id="outcomes-input-container">
+                <div class="outcome-input-row">
+                    <input type="text" id="outcome-1" placeholder="Learning Outcome 1">
+                    <button class="remove-btn" data-target="outcome-1">×</button>
+                </div>
+                <div class="outcome-input-row">
+                    <input type="text" id="outcome-2" placeholder="Learning Outcome 2">
+                    <button class="remove-btn" data-target="outcome-2">×</button>
+                </div>
+                <div class="outcome-input-row">
+                    <input type="text" id="outcome-3" placeholder="Learning Outcome 3">
+                    <button class="remove-btn" data-target="outcome-3">×</button>
+                </div>
+            </div>
+            
+            <button id="add-outcome-btn" class="secondary-btn">+ Add Outcome</button>
+        </div>
+        
+        <div class="form-group">
+            <label for="program-courses-input">Enter Your Program Courses</label>
+            <p class="help-text">Enter your program courses in sequence (e.g., "BIO 101: Intro to Biology")</p>
+            
+            <div id="courses-input-container">
+                <div class="course-input-row">
+                    <input type="text" id="course-1" placeholder="Course 1">
+                    <button class="remove-btn" data-target="course-1">×</button>
+                </div>
+                <div class="course-input-row">
+                    <input type="text" id="course-2" placeholder="Course 2">
+                    <button class="remove-btn" data-target="course-2">×</button>
+                </div>
+                <div class="course-input-row">
+                    <input type="text" id="course-3" placeholder="Course 3">
+                    <button class="remove-btn" data-target="course-3">×</button>
+                </div>
+                <div class="course-input-row">
+                    <input type="text" id="course-4" placeholder="Course 4">
+                    <button class="remove-btn" data-target="course-4">×</button>
+                </div>
+                <div class="course-input-row">
+                    <input type="text" id="course-5" placeholder="Course 5">
+                    <button class="remove-btn" data-target="course-5">×</button>
+                </div>
+            </div>
+            
+            <button id="add-course-btn" class="secondary-btn">+ Add Course</button>
+        </div>
+        
+        <button id="generate-map-btn" class="primary-btn">Generate Curriculum Map</button>
+        
+        <div id="curriculum-map-container" class="hidden">
+            <h4>Your Curriculum Map</h4>
+            <div class="map-instructions">
+                <p>Click on cells to toggle indicators based on your selected system.</p>
+            </div>
+            <div class="table-container">
+                <table id="curriculum-map" class="curriculum-map-table">
+                    <!-- Table will be generated by JavaScript -->
+                </table>
+            </div>
+            <div class="map-legend">
+                <h5>Legend</h5>
+                <div id="legend-content">
+                    <!-- Legend will be generated based on selected indicator system -->
+                </div>
+            </div>
+            <button id="save-map-btn" class="secondary-btn">Save Map</button>
+            <button id="export-map-btn" class="secondary-btn">Export as CSV</button>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 4: Analyzing Your Curriculum Map</h3>
+        
+        <div class="info-box">
+            <h4>Use these questions to analyze your completed curriculum map:</h4>
+            
+            <div class="analysis-category">
+                <h5>Coverage Analysis:</h5>
+                <ul>
+                    <li>Are all program learning outcomes addressed in multiple courses?</li>
+                    <li>Are there any outcomes that receive limited attention in the curriculum?</li>
+                    <li>Are there courses that don't significantly contribute to any program outcomes?</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-category">
+                <h5>Sequence Analysis:</h5>
+                <ul>
+                    <li>Is there a logical progression (I→R→M) for each outcome throughout the curriculum?</li>
+                    <li>Are outcomes introduced early enough to allow for development?</li>
+                    <li>Are there appropriate opportunities for mastery before graduation?</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-category">
+                <h5>Assessment Analysis:</h5>
+                <ul>
+                    <li>Are there designated points for assessing each outcome?</li>
+                    <li>Is assessment distributed appropriately throughout the curriculum?</li>
+                    <li>Are there both formative and summative assessment opportunities?</li>
+                </ul>
+            </div>
+            
+            <div class="analysis-category">
+                <h5>Balance Analysis:</h5>
+                <ul>
+                    <li>Is there a balanced emphasis across all program outcomes?</li>
+                    <li>Are core disciplinary competencies adequately emphasized?</li>
+                    <li>Are there any courses that are overloaded with too many outcomes?</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="map-analysis">Curriculum Map Analysis</label>
+            <p class="help-text">Based on your analysis of the curriculum map, identify strengths and areas for improvement</p>
+            <textarea id="map-analysis" rows="6" placeholder="Describe what you observe in your curriculum map, including strengths and potential gaps or issues"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 5: Refining Your Curriculum</h3>
+        
+        <div class="info-box">
+            <h4>Based on your analysis, consider these potential curriculum refinements:</h4>
+            
+            <div class="refinement-category">
+                <h5>Addressing Gaps:</h5>
+                <ul>
+                    <li>Modify existing courses to incorporate underrepresented outcomes</li>
+                    <li>Develop new courses to address specific outcomes</li>
+                    <li>Create co-curricular experiences to supplement course-based learning</li>
+                </ul>
+            </div>
+            
+            <div class="refinement-category">
+                <h5>Improving Progression:</h5>
+                <ul>
+                    <li>Resequence courses to create more logical development</li>
+                    <li>Adjust prerequisites to ensure proper skill building</li>
+                    <li>Modify course content to better support outcome development</li>
+                </ul>
+            </div>
+            
+            <div class="refinement-category">
+                <h5>Enhancing Assessment:</h5>
+                <ul>
+                    <li>Designate specific courses for outcome assessment</li>
+                    <li>Develop common assignments or rubrics across courses</li>
+                    <li>Create capstone experiences that integrate multiple outcomes</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="curriculum-refinement">Curriculum Refinement Plan</label>
+            <p class="help-text">Based on your analysis, describe specific changes you plan to make to your curriculum</p>
+            <textarea id="curriculum-refinement" rows="6" placeholder="Outline specific actions you will take to address any gaps or issues identified in your curriculum map"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Next Steps</h3>
+        <p>After mapping your curriculum, you'll select appropriate assessment methods for each learning outcome. The Assessment Methods Selection module will guide you through this process.</p>
+    </div>
+</body>
+</html>

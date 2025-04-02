@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Pages Deployment Guide</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2, h3 {
+            color: #2c3e50;
+        }
+        code {
+            background-color: #f5f5f5;
+            padding: 2px 4px;
+            border-radius: 4px;
+            font-family: monospace;
+        }
+        pre {
+            background-color: #f5f5f5;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+        }
+        .note {
+            background-color: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 10px;
+            margin: 15px 0;
+        }
+        .step {
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Deploying the Assessment Plan Tool to GitHub Pages</h1>
+    
+    <p>This guide will walk you through the process of deploying your interactive assessment plan tool to GitHub Pages, a free hosting service provided by GitHub.</p>
+    
+    <div class="note">
+        <strong>Note:</strong> GitHub Pages is perfect for static websites like this assessment tool. It's free, reliable, and ideal for testing with a small group of users.
+    </div>
+    
+    <h2>Prerequisites</h2>
+    <ul>
+        <li>A GitHub account (free to create at <a href="https://github.com/join" target="_blank">github.com/join</a>)</li>
+        <li>Git installed on your computer (optional, as you can also use GitHub's web interface)</li>
+        <li>The assessment plan tool files (which you already have)</li>
+    </ul>
+    
+    <h2>Deployment Steps</h2>
+    
+    <div class="step">
+        <h3>Step 1: Create a New GitHub Repository</h3>
+        <ol>
+            <li>Log in to your GitHub account</li>
+            <li>Click the "+" icon in the top-right corner and select "New repository"</li>
+            <li>Name your repository (e.g., "assessment-plan-tool")</li>
+            <li>Make sure the repository is set to "Public" (required for GitHub Pages with a free account)</li>
+            <li>Check the box to "Initialize this repository with a README"</li>
+            <li>Click "Create repository"</li>
+        </ol>
+    </div>
+    
+    <div class="step">
+        <h3>Step 2: Upload Your Files</h3>
+        
+        <h4>Option A: Using GitHub's Web Interface (No Git Required)</h4>
+        <ol>
+            <li>In your new repository, click the "Add file" button and select "Upload files"</li>
+            <li>Drag and drop all the files from the "github_deployment" folder or use the file selector to choose them</li>
+            <li>Add a commit message like "Initial upload of assessment plan tool"</li>
+            <li>Click "Commit changes"</li>
+        </ol>
+        
+        <h4>Option B: Using Git Command Line (For Advanced Users)</h4>
+        <pre>
+# Clone the repository
+git clone https://github.com/YOUR-USERNAME/assessment-plan-tool.git
+
+# Navigate to the repository folder
+cd assessment-plan-tool
+
+# Copy all your files to this folder
+# (Replace with the actual path to your files)
+cp -r /path/to/github_deployment/* .
+
+# Add all files to git
+git add .
+
+# Commit the changes
+git commit -m "Initial upload of assessment plan tool"
+
+# Push to GitHub
+git push origin main
+        </pre>
+    </div>
+    
+    <div class="step">
+        <h3>Step 3: Configure GitHub Pages</h3>
+        <ol>
+            <li>In your repository, click on "Settings" (tab near the top)</li>
+            <li>Scroll down to the "GitHub Pages" section (or click "Pages" in the left sidebar)</li>
+            <li>Under "Source", select "main" branch</li>
+            <li>Click "Save"</li>
+            <li>Wait a few minutes for GitHub to build and deploy your site</li>
+            <li>GitHub will show you the URL where your site is published (typically https://YOUR-USERNAME.github.io/assessment-plan-tool/)</li>
+        </ol>
+    </div>
+    
+    <div class="step">
+        <h3>Step 4: Test Your Deployed Site</h3>
+        <ol>
+            <li>Visit the URL provided by GitHub Pages</li>
+            <li>Verify that all pages load correctly</li>
+            <li>Test the interactive elements to ensure they work as expected</li>
+            <li>Check that styles and scripts are loading properly</li>
+        </ol>
+    </div>
+    
+    <h2>Sharing Your Deployed Tool</h2>
+    <p>Once deployed, you can share the GitHub Pages URL with your test users. They can access the assessment plan tool directly in their web browsers without needing to download or install anything.</p>
+    
+    <div class="note">
+        <strong>Important:</strong> Any data entered into the tool will be stored in the user's browser using local storage. This data is not sent to a server and will persist only on the user's device. If they clear their browser data or use a different device, they will need to start over.
+    </div>
+    
+    <h2>Making Updates</h2>
+    <p>If you need to make changes to the tool after deployment:</p>
+    <ol>
+        <li>Make your changes to the files locally</li>
+        <li>Upload the updated files to GitHub using the same process as in Step 2</li>
+        <li>GitHub Pages will automatically update your site with the new changes (usually within a few minutes)</li>
+    </ol>
+    
+    <h2>Moving to a Paid Solution Later</h2>
+    <p>If you decide to move to a paid hosting solution later for more features or a custom domain name, you can easily migrate these files to any web hosting service that supports static websites, including:</p>
+    <ul>
+        <li>Netlify</li>
+        <li>Vercel</li>
+        <li>Amazon S3</li>
+        <li>Traditional web hosting providers (GoDaddy, Bluehost, etc.)</li>
+    </ul>
+    
+    <p>The assessment plan tool is built with standard HTML, CSS, and JavaScript, so it will work on any hosting platform without modification.</p>
+</body>
+</html>

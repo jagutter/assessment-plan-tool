@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Program Assessment Plan Tool</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1>Interactive University-Level Program Assessment Plan Tool</h1>
+            <div class="user-controls">
+                <button id="save-progress-btn">Save Progress</button>
+                <button id="help-btn">Help</button>
+            </div>
+        </header>
+
+        <div class="main-content">
+            <nav class="sidebar">
+                <div class="progress-tracker">
+                    <h3>Your Progress</h3>
+                    <ul class="progress-list">
+                        <li class="progress-item active" data-module="dashboard">
+                            <span class="progress-number">0</span>
+                            <span class="progress-label">Dashboard</span>
+                        </li>
+                        <li class="progress-item" data-module="program-profile">
+                            <span class="progress-number">1</span>
+                            <span class="progress-label">Program Profile</span>
+                        </li>
+                        <li class="progress-item" data-module="learning-outcomes">
+                            <span class="progress-number">2</span>
+                            <span class="progress-label">Learning Outcomes</span>
+                        </li>
+                        <li class="progress-item" data-module="curriculum-mapping">
+                            <span class="progress-number">3</span>
+                            <span class="progress-label">Curriculum Mapping</span>
+                        </li>
+                        <li class="progress-item" data-module="assessment-methods">
+                            <span class="progress-number">4</span>
+                            <span class="progress-label">Assessment Methods</span>
+                        </li>
+                        <li class="progress-item" data-module="data-collection">
+                            <span class="progress-number">5</span>
+                            <span class="progress-label">Data Collection</span>
+                        </li>
+                        <li class="progress-item" data-module="action-planning">
+                            <span class="progress-number">6</span>
+                            <span class="progress-label">Action Planning</span>
+                        </li>
+                    </ul>
+                </div>
+                <div class="resources-section">
+                    <h3>Resources</h3>
+                    <ul class="resources-list">
+                        <li><a href="#" class="resource-link" data-resource="templates">Templates</a></li>
+                        <li><a href="#" class="resource-link" data-resource="examples">Examples</a></li>
+                        <li><a href="#" class="resource-link" data-resource="glossary">Glossary</a></li>
+                        <li><a href="#" class="resource-link" data-resource="faq">FAQ</a></li>
+                    </ul>
+                </div>
+            </nav>
+
+            <div class="content-area">
+                <div id="module-container" class="module-container">
+                    <!-- Module content will be loaded here -->
+                    <div id="dashboard-module" class="module-content active">
+                        <h2>Program Assessment Plan Dashboard</h2>
+                        <div class="welcome-message">
+                            <p>Welcome to the Interactive University-Level Program Assessment Plan Tool. This dashboard will guide you through the process of developing, implementing, and evaluating a comprehensive program assessment plan based on best practices.</p>
+                        </div>
+
+                        <div class="getting-started">
+                            <h3>Getting Started</h3>
+                            <p>This interactive tool will walk you through each step of creating an effective program assessment plan. The process is divided into six main components, each designed to build upon the previous steps:</p>
+                            <ol>
+                                <li><strong>Program Profile</strong>: Define your program's basic information and mission</li>
+                                <li><strong>Learning Outcomes Development</strong>: Create measurable learning outcomes aligned with institutional goals</li>
+                                <li><strong>Curriculum Mapping</strong>: Connect courses to outcomes and identify assessment points</li>
+                                <li><strong>Assessment Methods Selection</strong>: Choose appropriate methods to evaluate each outcome</li>
+                                <li><strong>Data Collection and Analysis</strong>: Plan how to gather and interpret assessment data</li>
+                                <li><strong>Action Planning</strong>: Use results to improve your program</li>
+                            </ol>
+                        </div>
+
+                        <div class="why-assessment">
+                            <h3>Why Assessment Matters</h3>
+                            <p>Effective program assessment:</p>
+                            <ul>
+                                <li>Improves student learning experiences</li>
+                                <li>Provides evidence of program quality</li>
+                                <li>Supports accreditation requirements</li>
+                                <li>Informs curriculum development</li>
+                                <li>Demonstrates institutional effectiveness</li>
+                            </ul>
+                        </div>
+
+                        <div class="help-section">
+                            <h3>Need Help?</h3>
+                            <p>Throughout this process, you'll have access to:</p>
+                            <ul>
+                                <li>Step-by-step guidance</li>
+                                <li>Examples from your discipline</li>
+                                <li>Templates and resources</li>
+                                <li>Best practice recommendations</li>
+                                <li>AI-powered assistance</li>
+                            </ul>
+                        </div>
+
+                        <div class="action-buttons">
+                            <button id="begin-btn" class="primary-btn">Begin</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="module-navigation">
+                    <button id="prev-btn" class="nav-btn" disabled>Previous</button>
+                    <button id="next-btn" class="nav-btn">Next</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="ai-assistant" class="ai-assistant">
+            <div class="ai-assistant-header">
+                <h3>Assessment Assistant</h3>
+                <button id="toggle-assistant-btn">-</button>
+            </div>
+            <div class="ai-assistant-content">
+                <p>I'm your AI Assessment Assistant. I can help you with:</p>
+                <ul>
+                    <li>Answering questions about assessment terminology</li>
+                    <li>Providing examples relevant to your discipline</li>
+                    <li>Suggesting improvements to your assessment plan</li>
+                    <li>Troubleshooting common assessment challenges</li>
+                </ul>
+                <p>How can I help you with your assessment plan today?</p>
+                <div class="ai-input-area">
+                    <input type="text" id="ai-question-input" placeholder="Ask a question...">
+                    <button id="ai-submit-btn">Ask</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="help-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2>Help & Instructions</h2>
+                <div class="help-content">
+                    <h3>Using the Assessment Plan Tool</h3>
+                    <p>This interactive tool guides you through creating a comprehensive program assessment plan in six steps:</p>
+                    <ol>
+                        <li><strong>Navigation</strong>: Use the progress tracker on the left to move between modules or the Next/Previous buttons at the bottom of each page.</li>
+                        <li><strong>Saving Progress</strong>: Click the "Save Progress" button at any time to save your work.</li>
+                        <li><strong>Resources</strong>: Access templates, examples, and other resources from the sidebar.</li>
+                        <li><strong>AI Assistant</strong>: Use the AI Assistant panel for guidance and to ask questions.</li>
+                        <li><strong>Completing Modules</strong>: Each module must be completed before moving to the next, but you can return to previous modules to make changes.</li>
+                        <li><strong>Final Plan</strong>: After completing all modules, you'll be able to generate your complete assessment plan document.</li>
+                    </ol>
+                    <h3>Keyboard Shortcuts</h3>
+                    <ul>
+                        <li><strong>Alt + N</strong>: Next module</li>
+                        <li><strong>Alt + P</strong>: Previous module</li>
+                        <li><strong>Alt + S</strong>: Save progress</li>
+                        <li><strong>Alt + H</strong>: Open this help dialog</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

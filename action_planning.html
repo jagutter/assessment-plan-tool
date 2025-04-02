@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Action Planning Module</title>
+</head>
+<body>
+    <div class="module-header">
+        <h2>6. Action Planning Module</h2>
+        <p class="module-description">The action planning process transforms assessment findings into meaningful improvements to your program. This module guides you through developing and implementing action plans based on assessment results to enhance student learning and program effectiveness.</p>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 1: Reviewing Assessment Findings</h3>
+        
+        <div class="info-box">
+            <p>Begin by synthesizing key findings from your assessment activities:</p>
+        </div>
+        
+        <div class="table-container">
+            <table id="assessment-summary-table" class="assessment-summary-table">
+                <thead>
+                    <tr>
+                        <th>Learning Outcome</th>
+                        <th>Key Findings</th>
+                        <th>Strengths Identified</th>
+                        <th>Areas for Improvement</th>
+                        <th>Supporting Evidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <select id="outcome-summary-1" class="outcome-select">
+                                <option value="">Select outcome</option>
+                                <!-- Options will be populated from previous module -->
+                            </select>
+                        </td>
+                        <td>
+                            <textarea id="findings-1" rows="3" placeholder="Summarize key findings"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="strengths-1" rows="3" placeholder="List identified strengths"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="improvements-1" rows="3" placeholder="List areas needing improvement"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="evidence-1" rows="3" placeholder="Describe supporting evidence"></textarea>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <select id="outcome-summary-2" class="outcome-select">
+                                <option value="">Select outcome</option>
+                                <!-- Options will be populated from previous module -->
+                            </select>
+                        </td>
+                        <td>
+                            <textarea id="findings-2" rows="3" placeholder="Summarize key findings"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="strengths-2" rows="3" placeholder="List identified strengths"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="improvements-2" rows="3" placeholder="List areas needing improvement"></textarea>
+                        </td>
+                        <td>
+                            <textarea id="evidence-2" rows="3" placeholder="Describe supporting evidence"></textarea>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <button id="add-summary-row-btn" class="secondary-btn">+ Add Row</button>
+        
+        <div class="example-box">
+            <h4>Example Assessment Summary (Communication Program):</h4>
+            <table class="example-table">
+                <thead>
+                    <tr>
+                        <th>Learning Outcome</th>
+                        <th>Key Findings</th>
+                        <th>Strengths Identified</th>
+                        <th>Areas for Improvement</th>
+                        <th>Supporting Evidence</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Deliver effective oral presentations</td>
+                        <td>82% of students met or exceeded expectations for organization and delivery; 45% met expectations for responding to questions</td>
+                        <td>Students effectively organize and deliver prepared content</td>
+                        <td>Students struggle with impromptu responses to audience questions</td>
+                        <td>Capstone presentation rubric scores; faculty observation notes</td>
+                    </tr>
+                    <tr>
+                        <td>Produce well-written documents for diverse audiences</td>
+                        <td>75% of students met expectations for professional audiences; 40% met expectations for general audiences</td>
+                        <td>Students write effectively for disciplinary audiences</td>
+                        <td>Students struggle to adapt content for non-specialist audiences</td>
+                        <td>Portfolio assessment scores; employer feedback</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 2: Prioritizing Areas for Improvement</h3>
+        
+        <div class="info-box">
+            <p>Not all findings require immediate action. Use these criteria to prioritize:</p>
+        </div>
+        
+        <div class="table-container">
+            <table id="prioritization-matrix" class="prioritization-matrix">
+                <thead>
+                    <tr>
+                        <th>Improvement Area</th>
+                        <th>Impact on Student Learning</th>
+                        <th>Alignment with Program Goals</th>
+                        <th>Feasibility</th>
+                        <th>Resource Requirements</th>
+                        <th>Priority Level</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <input type="text" id="area-1" placeholder="Enter improvement area">
+                        </td>
+                        <td>
+                            <select id="impact-1">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="alignment-1">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="feasibility-1">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="resources-1">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="priority-1">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <input type="text" id="area-2" placeholder="Enter improvement area">
+                        </td>
+                        <td>
+                            <select id="impact-2">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="alignment-2">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="feasibility-2">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="resources-2">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                        <td>
+                            <select id="priority-2">
+                                <option value="">Select level</option>
+                                <option value="high">High</option>
+                                <option value="medium">Medium</option>
+                                <option value="low">Low</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <button id="add-priority-row-btn" class="secondary-btn">+ Add Row</button>
+        
+        <div class="info-box">
+            <h4>Prioritization Questions:</h4>
+            <ul>
+                <li>How significant is the gap between expected and actual performance?</li>
+                <li>How central is this outcome to the program's mission and goals?</li>
+                <li>How many students are affected by this issue?</li>
+                <li>Are there external requirements (accreditation, etc.) related to this area?</li>
+                <li>What resources would be required to address this issue?</li>
+                <li>Is this an emerging issue or a persistent problem?</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 3: Developing Action Plans</h3>
+        
+        <div class="info-box">
+            <p>For each priority area, develop a specific action plan:</p>
+        </div>
+        
+        <div id="action-plans-container">
+            <div class="action-plan-form">
+                <h4>Action Plan 1</h4>
+                
+                <div class="form-group">
+                    <label for="improvement-area-1">Improvement Area:</label>
+                    <input type="text" id="improvement-area-1" placeholder="Specific area identified for improvement">
+                </div>
+                
+                <div class="form-group">
+                    <label for="desired-outcome-1">Desired Outcome:</label>
+                    <textarea id="desired-outcome-1" rows="2" placeholder="What success will look like"></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label>Action Steps:</label>
+                    <div id="action-steps-container-1">
+                        <div class="action-step">
+                            <div class="step-header">
+                                <h5>Step 1</h5>
+                                <button class="remove-step-btn">×</button>
+                            </div>
+                            <input type="text" class="step-description" placeholder="Describe specific action step">
+                            
+                            <div class="step-details">
+                                <div class="detail-row">
+                                    <label>Person(s) responsible:</label>
+                                    <input type="text" class="step-responsible" placeholder="Name/role">
+                                </div>
+                                <div class="detail-row">
+                                    <label>Timeline:</label>
+                                    <input type="text" class="step-timeline" placeholder="Start and completion dates">
+                                </div>
+                                <div class="detail-row">
+                                    <label>Resources needed:</label>
+                                    <input type="text" class="step-resources" placeholder="Budget, time, materials, etc.">
+                                </div>
+                                <div class="detail-row">
+                                    <label>Success indicators:</label>
+                                    <input type="text" class="step-indicators" placeholder="How you'll know this step is completed">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="add-step-btn secondary-btn">+ Add Step</button>
+                </div>
+                
+                <div class="form-group">
+                    <label for="evaluation-plan-1">Evaluation Plan:</label>
+                    <textarea id="evaluation-plan-1" rows="4" placeholder="How will you determine if the action plan was successful? When will you reassess this outcome? What evidence will you collect?"></textarea>
+                </div>
+            </div>
+        </div>
+        
+        <button id="add-action-plan-btn" class="secondary-btn">+ Add Another Action Plan</button>
+        
+        <div class="example-box">
+            <h4>Example Action Plan (Communication Program):</h4>
+            
+            <div class="example-action-plan">
+                <p><strong>Improvement Area:</strong> Students struggle to adapt written communication for non-specialist audiences</p>
+                
+                <p><strong>Desired Outcome:</strong> Students will demonstrate the ability to effectively communicate complex disciplinary concepts to general audiences</p>
+                
+                <p><strong>Action Steps:</strong></p>
+                <ol>
+                    <li>
+                        <p>Revise assignments in COM 301 to include more writing for non-specialist audiences</p>
+                        <ul>
+                            <li><strong>Person(s) responsible:</strong> Dr. Smith, course coordinator</li>
+                            <li><strong>Timeline:</strong> Revise by August 15, implement in Fall semester</li>
+                            <li><strong>Resources needed:</strong> Sample assignments, 10 hours of development time</li>
+                            <li><strong>Success indicators:</strong> Revised syllabus and assignment descriptions</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Develop a rubric specifically for evaluating communication to non-specialist audiences</p>
+                        <ul>
+                            <li><strong>Person(s) responsible:</strong> Assessment committee</li>
+                            <li><strong>Timeline:</strong> September 1-30</li>
+                            <li><strong>Resources needed:</strong> Committee meeting time, example rubrics</li>
+                            <li><strong>Success indicators:</strong> Completed rubric approved by faculty</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <p>Conduct a workshop for faculty on teaching adaptation strategies for different audiences</p>
+                        <ul>
+                            <li><strong>Person(s) responsible:</strong> Dr. Johnson, faculty development coordinator</li>
+                            <li><strong>Timeline:</strong> October 15</li>
+                            <li><strong>Resources needed:</strong> $500 for materials and refreshments, 2-hour time block</li>
+                            <li><strong>Success indicators:</strong> Workshop attendance, faculty feedback</li>
+                        </ul>
+                    </li>
+                </ol>
+                
+                <p><strong>Evaluation Plan:</strong></p>
+                <ul>
+                    <li>Collect samples of student writing for non-specialist audiences from COM 301 and capstone course</li>
+                    <li>Assess using new rubric at the end of Spring semester</li>
+                    <li>Compare results to baseline data from previous assessment</li>
+                    <li>Target: 70% of students will meet expectations for non-specialist audience writing</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 4: Implementing Action Plans</h3>
+        
+        <div class="info-box">
+            <h4>Implementation Checklist:</h4>
+            <div class="checklist">
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-stakeholders" class="implementation-check">
+                    <label for="check-stakeholders">All stakeholders are informed about the action plan and its rationale</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-responsibilities" class="implementation-check">
+                    <label for="check-responsibilities">Responsibilities are clearly assigned and acknowledged</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-resources" class="implementation-check">
+                    <label for="check-resources">Necessary resources have been secured</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-timeline" class="implementation-check">
+                    <label for="check-timeline">Timeline is realistic and accounts for academic calendar</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-barriers" class="implementation-check">
+                    <label for="check-barriers">Potential barriers have been identified with mitigation strategies</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-monitoring" class="implementation-check">
+                    <label for="check-monitoring">Progress monitoring mechanisms are in place</label>
+                </div>
+                <div class="checklist-item">
+                    <input type="checkbox" id="check-documentation" class="implementation-check">
+                    <label for="check-documentation">Documentation procedures are established</label>
+                </div>
+            </div>
+        </div>
+        
+        <div class="info-box">
+            <h4>Common Implementation Challenges and Solutions:</h4>
+            <table class="challenges-table">
+                <thead>
+                    <tr>
+                        <th>Challenge</th>
+                        <th>Potential Solutions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Faculty resistance to change</td>
+                        <td>Involve faculty in planning; emphasize benefits; provide support and resources</td>
+                    </tr>
+                    <tr>
+                        <td>Limited resources</td>
+                        <td>Prioritize actions; seek external funding; implement changes incrementally</td>
+                    </tr>
+                    <tr>
+                        <td>Time constraints</td>
+                        <td>Integrate with existing activities; distribute workload; extend timeline if necessary</td>
+                    </tr>
+                    <tr>
+                        <td>Coordination across courses</td>
+                        <td>Establish regular communication; create shared resources; designate a coordinator</td>
+                    </tr>
+                    <tr>
+                        <td>Maintaining momentum</td>
+                        <td>Set interim milestones; celebrate progress; regularly revisit the plan</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        
+        <div class="form-group">
+            <label for="implementation-strategy">Implementation Strategy</label>
+            <textarea id="implementation-strategy" rows="5" placeholder="Describe your strategy for implementing action plans, including how you will address potential challenges"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Step 5: Documenting and Communicating Improvements</h3>
+        
+        <div class="info-box">
+            <h4>Documentation Framework:</h4>
+            <ol>
+                <li><strong>Initial Assessment Findings</strong>: Summarize what prompted the action plan</li>
+                <li><strong>Action Plan Implementation</strong>: Document what was actually done (vs. what was planned)</li>
+                <li><strong>Follow-up Assessment</strong>: Present results from reassessment after changes</li>
+                <li><strong>Impact Analysis</strong>: Analyze the effectiveness of the changes</li>
+                <li><strong>Lessons Learned</strong>: Reflect on the improvement process</li>
+                <li><strong>Next Steps</strong>: Outline future plans based on current results</li>
+            </ol>
+        </div>
+        
+        <div class="info-box">
+            <h4>Communication Strategies:</h4>
+            <ul>
+                <li><strong>Program Website</strong>: Post summaries of improvements and their impact</li>
+                <li><strong>Annual Reports</strong>: Include assessment-based improvements in program reports</li>
+                <li><strong>Faculty Meetings</strong>: Discuss results and celebrate successes</li>
+                <li><strong>Student Communication</strong>: Inform students about changes made based on assessment</li>
+                <li><strong>Stakeholder Updates</strong>: Share relevant improvements with external stakeholders</li>
+                <li><strong>Institutional Assessment Office</strong>: Submit documentation for institutional records</li>
+            </ul>
+        </div>
+        
+        <div class="example-box">
+            <h4>Example Documentation (Communication Program):</h4>
+            
+            <div class="documentation-example">
+                <h5>Initial Assessment Findings (Spring 2024):</h5>
+                <p>Assessment of student portfolios revealed that while 75% of students could effectively communicate to professional audiences, only 40% met expectations for adapting content for general audiences.</p>
+                
+                <h5>Action Plan Implementation (Fall 2024):</h5>
+                <ol>
+                    <li>Revised COM 301 to include three new assignments focused on communicating to non-specialist audiences</li>
+                    <li>Developed and implemented a new rubric specifically for evaluating audience adaptation</li>
+                    <li>Conducted faculty workshop on teaching communication adaptation strategies (15 faculty attended)</li>
+                </ol>
+                
+                <h5>Follow-up Assessment (Spring 2025):</h5>
+                <p>Reassessment of student portfolios showed 68% of students now meet expectations for communicating to general audiences, an increase of 28 percentage points.</p>
+                
+                <h5>Impact Analysis:</h5>
+                <p>The curriculum revisions and faculty development activities have substantially improved students' ability to adapt their communication for different audiences. The target of 70% was nearly achieved in one academic year.</p>
+                
+                <h5>Lessons Learned:</h5>
+                <ol>
+                    <li>Faculty benefited from concrete examples of effective audience adaptation</li>
+                    <li>The specialized rubric helped clarify expectations for students</li>
+                    <li>Multiple practice opportunities throughout the curriculum were essential</li>
+                </ol>
+                
+                <h5>Next Steps:</h5>
+                <ol>
+                    <li>Extend similar assignments to COM 201 to introduce concepts earlier</li>
+                    <li>Develop additional resources for faculty and students</li>
+                    <li>Continue monitoring performance with a new target of 80%</li>
+                </ol>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="documentation-plan">Documentation and Communication Plan</label>
+            <textarea id="documentation-plan" rows="5" placeholder="Describe how you will document and communicate the results of your improvement efforts"></textarea>
+        </div>
+    </div>
+
+    <div class="module-section">
+        <h3>Next Steps</h3>
+        <p>Congratulations! You have completed all modules of the Program Assessment Plan. You now have a comprehensive framework for developing, implementing, and improving your assessment practices.</p>
+        <button id="generate-plan-btn" class="primary-btn">Generate Complete Assessment Plan</button>
+    </div>
+</body>
+</html>
