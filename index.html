@@ -3,172 +3,326 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interactive Program Assessment Plan Tool</title>
+    <title>Assessment Plan Tool - AI Enhancement Demo</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px 0;
+            margin-bottom: 30px;
+        }
+        
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        h1 {
+            margin: 0;
+            font-size: 24px;
+        }
+        
+        .module-section {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            padding: 25px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-top: 0;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        
+        h3 {
+            color: #3498db;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+        
+        input[type="text"], textarea, select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+        
+        textarea {
+            min-height: 100px;
+        }
+        
+        .help-text {
+            font-size: 14px;
+            color: #666;
+            margin-top: 5px;
+            margin-bottom: 8px;
+        }
+        
+        .outcome-input-container {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .outcome-prefix {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .demo-controls {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .demo-controls h2 {
+            margin-top: 0;
+        }
+        
+        .demo-note {
+            background-color: #e7f3fe;
+            border-left: 4px solid #2196F3;
+            padding: 15px;
+            margin: 20px 0;
+        }
+    </style>
 </head>
 <body>
-    <div class="app-container">
-        <header class="app-header">
-            <h1>Interactive University-Level Program Assessment Plan Tool</h1>
-            <div class="user-controls">
-                <button id="save-progress-btn">Save Progress</button>
-                <button id="help-btn">Help</button>
+    <header>
+        <div class="container">
+            <h1>Assessment Plan Tool - AI Enhancement Demo</h1>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="demo-controls">
+            <h2>AI Enhancement Prototype</h2>
+            <p>This prototype demonstrates how AI-powered analysis and feedback can enhance the assessment planning process. The AI features provide real-time analysis of your inputs and offer specific suggestions for improvement.</p>
+            <p><strong>Key Features:</strong></p>
+            <ul>
+                <li>Real-time analysis of learning outcome statements</li>
+                <li>Automated feedback on assessment methods</li>
+                <li>Gap analysis for curriculum mapping</li>
+                <li>Quality evaluation of data collection plans</li>
+                <li>Action planning effectiveness assessment</li>
+                <li>AI Assistant for general guidance</li>
+            </ul>
+        </div>
+        
+        <div class="demo-note">
+            <p><strong>Demo Instructions:</strong> Enter information in the form fields below and then click "Get AI Feedback" to see the AI analysis. You can also click on the AI Assistant button in the bottom right corner for additional guidance.</p>
+        </div>
+        
+        <div class="module-section">
+            <h2>Learning Outcomes Module</h2>
+            <p>Develop measurable program learning outcomes that describe what students should know, value, or be able to do upon completion of your program.</p>
+            
+            <div class="form-group outcome-form-group">
+                <label for="learning-outcome-1">Program Learning Outcome 1</label>
+                <div class="outcome-input-container">
+                    <div class="outcome-prefix">Upon completion of this program, students will be able to</div>
+                    <textarea id="learning-outcome-1" rows="3" placeholder="Use an action verb and describe specific knowledge, skill, or value"></textarea>
+                </div>
+                <div class="outcome-feedback" id="feedback-1"></div>
             </div>
-        </header>
-
-        <div class="main-content">
-            <nav class="sidebar">
-                <div class="progress-tracker">
-                    <h3>Your Progress</h3>
-                    <ul class="progress-list">
-                        <li class="progress-item active" data-module="dashboard">
-                            <span class="progress-number">0</span>
-                            <span class="progress-label">Dashboard</span>
-                        </li>
-                        <li class="progress-item" data-module="program-profile">
-                            <span class="progress-number">1</span>
-                            <span class="progress-label">Program Profile</span>
-                        </li>
-                        <li class="progress-item" data-module="learning-outcomes">
-                            <span class="progress-number">2</span>
-                            <span class="progress-label">Learning Outcomes</span>
-                        </li>
-                        <li class="progress-item" data-module="curriculum-mapping">
-                            <span class="progress-number">3</span>
-                            <span class="progress-label">Curriculum Mapping</span>
-                        </li>
-                        <li class="progress-item" data-module="assessment-methods">
-                            <span class="progress-number">4</span>
-                            <span class="progress-label">Assessment Methods</span>
-                        </li>
-                        <li class="progress-item" data-module="data-collection">
-                            <span class="progress-number">5</span>
-                            <span class="progress-label">Data Collection</span>
-                        </li>
-                        <li class="progress-item" data-module="action-planning">
-                            <span class="progress-number">6</span>
-                            <span class="progress-label">Action Planning</span>
-                        </li>
-                    </ul>
+            
+            <div class="form-group outcome-form-group">
+                <label for="learning-outcome-2">Program Learning Outcome 2</label>
+                <div class="outcome-input-container">
+                    <div class="outcome-prefix">Upon completion of this program, students will be able to</div>
+                    <textarea id="learning-outcome-2" rows="3" placeholder="Use an action verb and describe specific knowledge, skill, or value"></textarea>
                 </div>
-                <div class="resources-section">
-                    <h3>Resources</h3>
-                    <ul class="resources-list">
-                        <li><a href="#" class="resource-link" data-resource="templates">Templates</a></li>
-                        <li><a href="#" class="resource-link" data-resource="examples">Examples</a></li>
-                        <li><a href="#" class="resource-link" data-resource="glossary">Glossary</a></li>
-                        <li><a href="#" class="resource-link" data-resource="faq">FAQ</a></li>
-                    </ul>
+                <div class="outcome-feedback" id="feedback-2"></div>
+            </div>
+            
+            <div class="form-group outcome-form-group">
+                <label for="learning-outcome-3">Program Learning Outcome 3</label>
+                <div class="outcome-input-container">
+                    <div class="outcome-prefix">Upon completion of this program, students will be able to</div>
+                    <textarea id="learning-outcome-3" rows="3" placeholder="Use an action verb and describe specific knowledge, skill, or value"></textarea>
                 </div>
-            </nav>
-
-            <div class="content-area">
-                <div id="module-container" class="module-container">
-                    <!-- Module content will be loaded here -->
-                    <div id="dashboard-module" class="module-content active">
-                        <h2>Program Assessment Plan Dashboard</h2>
-                        <div class="welcome-message">
-                            <p>Welcome to the Interactive University-Level Program Assessment Plan Tool. This dashboard will guide you through the process of developing, implementing, and evaluating a comprehensive program assessment plan based on best practices.</p>
-                        </div>
-
-                        <div class="getting-started">
-                            <h3>Getting Started</h3>
-                            <p>This interactive tool will walk you through each step of creating an effective program assessment plan. The process is divided into six main components, each designed to build upon the previous steps:</p>
-                            <ol>
-                                <li><strong>Program Profile</strong>: Define your program's basic information and mission</li>
-                                <li><strong>Learning Outcomes Development</strong>: Create measurable learning outcomes aligned with institutional goals</li>
-                                <li><strong>Curriculum Mapping</strong>: Connect courses to outcomes and identify assessment points</li>
-                                <li><strong>Assessment Methods Selection</strong>: Choose appropriate methods to evaluate each outcome</li>
-                                <li><strong>Data Collection and Analysis</strong>: Plan how to gather and interpret assessment data</li>
-                                <li><strong>Action Planning</strong>: Use results to improve your program</li>
-                            </ol>
-                        </div>
-
-                        <div class="why-assessment">
-                            <h3>Why Assessment Matters</h3>
-                            <p>Effective program assessment:</p>
-                            <ul>
-                                <li>Improves student learning experiences</li>
-                                <li>Provides evidence of program quality</li>
-                                <li>Supports accreditation requirements</li>
-                                <li>Informs curriculum development</li>
-                                <li>Demonstrates institutional effectiveness</li>
-                            </ul>
-                        </div>
-
-                        <div class="help-section">
-                            <h3>Need Help?</h3>
-                            <p>Throughout this process, you'll have access to:</p>
-                            <ul>
-                                <li>Step-by-step guidance</li>
-                                <li>Examples from your discipline</li>
-                                <li>Templates and resources</li>
-                                <li>Best practice recommendations</li>
-                                <li>AI-powered assistance</li>
-                            </ul>
-                        </div>
-
-                        <div class="action-buttons">
-                            <button id="begin-btn" class="primary-btn">Begin</button>
-                        </div>
+                <div class="outcome-feedback" id="feedback-3"></div>
+            </div>
+        </div>
+        
+        <div class="module-section">
+            <h2>Assessment Methods Module</h2>
+            <p>Select appropriate methods for measuring student achievement of each learning outcome.</p>
+            
+            <div class="form-group">
+                <label for="outcome-text-1">Learning Outcome 1:</label>
+                <div class="outcome-text" id="outcome-text-1">[Your first learning outcome will appear here]</div>
+            </div>
+            
+            <div class="form-group">
+                <label>Direct Assessment Methods (select at least one):</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="direct-1-1" name="direct-1">
+                        <label for="direct-1-1">Course-embedded assessments</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="direct-1-2" name="direct-1">
+                        <label for="direct-1-2">Standardized tests</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="direct-1-3" name="direct-1">
+                        <label for="direct-1-3">Capstone projects</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="direct-1-4" name="direct-1">
+                        <label for="direct-1-4">Portfolios</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="direct-1-5" name="direct-1">
+                        <label for="direct-1-5">Performance assessments</label>
                     </div>
                 </div>
-
-                <div class="module-navigation">
-                    <button id="prev-btn" class="nav-btn" disabled>Previous</button>
-                    <button id="next-btn" class="nav-btn">Next</button>
+            </div>
+            
+            <div class="form-group">
+                <label>Indirect Assessment Methods (optional):</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="indirect-1-1" name="indirect-1">
+                        <label for="indirect-1-1">Surveys/questionnaires</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="indirect-1-2" name="indirect-1">
+                        <label for="indirect-1-2">Interviews/focus groups</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="indirect-1-3" name="indirect-1">
+                        <label for="indirect-1-3">Employer/internship evaluations</label>
+                    </div>
+                    <div class="checkbox-item">
+                        <input type="checkbox" id="indirect-1-4" name="indirect-1">
+                        <label for="indirect-1-4">Reflective essays</label>
+                    </div>
                 </div>
+            </div>
+            
+            <div class="form-group">
+                <label for="assessment-details-1">Assessment Details:</label>
+                <textarea id="assessment-details-1" rows="3" placeholder="Describe how you will implement these assessment methods for this outcome"></textarea>
             </div>
         </div>
-
-        <div id="ai-assistant" class="ai-assistant">
-            <div class="ai-assistant-header">
-                <h3>Assessment Assistant</h3>
-                <button id="toggle-assistant-btn">-</button>
+        
+        <div class="module-section">
+            <h2>Data Collection Module</h2>
+            <p>Plan how to collect, analyze, and interpret assessment data to draw meaningful conclusions about student learning.</p>
+            
+            <div class="form-group">
+                <label for="data-management">Data Management Plan</label>
+                <textarea id="data-management" rows="5" placeholder="Describe how you will manage assessment data, including storage, access, anonymization, retention, and documentation"></textarea>
             </div>
-            <div class="ai-assistant-content">
-                <p>I'm your AI Assessment Assistant. I can help you with:</p>
-                <ul>
-                    <li>Answering questions about assessment terminology</li>
-                    <li>Providing examples relevant to your discipline</li>
-                    <li>Suggesting improvements to your assessment plan</li>
-                    <li>Troubleshooting common assessment challenges</li>
-                </ul>
-                <p>How can I help you with your assessment plan today?</p>
-                <div class="ai-input-area">
-                    <input type="text" id="ai-question-input" placeholder="Ask a question...">
-                    <button id="ai-submit-btn">Ask</button>
-                </div>
+            
+            <div class="form-group">
+                <label for="quality-strategies">Data Quality Strategies</label>
+                <textarea id="quality-strategies" rows="4" placeholder="Describe specific strategies you will use to ensure the quality of your assessment data"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="analysis-plan">Data Analysis Plan</label>
+                <textarea id="analysis-plan" rows="5" placeholder="Describe how you will analyze assessment data for each learning outcome, including specific methods and tools"></textarea>
             </div>
         </div>
-
-        <div id="help-modal" class="modal">
-            <div class="modal-content">
-                <span class="close-modal">&times;</span>
-                <h2>Help & Instructions</h2>
-                <div class="help-content">
-                    <h3>Using the Assessment Plan Tool</h3>
-                    <p>This interactive tool guides you through creating a comprehensive program assessment plan in six steps:</p>
-                    <ol>
-                        <li><strong>Navigation</strong>: Use the progress tracker on the left to move between modules or the Next/Previous buttons at the bottom of each page.</li>
-                        <li><strong>Saving Progress</strong>: Click the "Save Progress" button at any time to save your work.</li>
-                        <li><strong>Resources</strong>: Access templates, examples, and other resources from the sidebar.</li>
-                        <li><strong>AI Assistant</strong>: Use the AI Assistant panel for guidance and to ask questions.</li>
-                        <li><strong>Completing Modules</strong>: Each module must be completed before moving to the next, but you can return to previous modules to make changes.</li>
-                        <li><strong>Final Plan</strong>: After completing all modules, you'll be able to generate your complete assessment plan document.</li>
-                    </ol>
-                    <h3>Keyboard Shortcuts</h3>
-                    <ul>
-                        <li><strong>Alt + N</strong>: Next module</li>
-                        <li><strong>Alt + P</strong>: Previous module</li>
-                        <li><strong>Alt + S</strong>: Save progress</li>
-                        <li><strong>Alt + H</strong>: Open this help dialog</li>
-                    </ul>
-                </div>
+        
+        <div class="module-section">
+            <h2>Action Planning Module</h2>
+            <p>Use assessment results to make meaningful improvements to your program.</p>
+            
+            <div class="form-group">
+                <label for="improvement-area-1">Improvement Area:</label>
+                <input type="text" id="improvement-area-1" placeholder="Specific area identified for improvement">
+            </div>
+            
+            <div class="form-group">
+                <label for="desired-outcome-1">Desired Outcome:</label>
+                <textarea id="desired-outcome-1" rows="2" placeholder="What success will look like"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="evaluation-plan-1">Evaluation Plan:</label>
+                <textarea id="evaluation-plan-1" rows="4" placeholder="How will you determine if the action plan was successful? When will you reassess this outcome? What evidence will you collect?"></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="implementation-strategy">Implementation Strategy</label>
+                <textarea id="implementation-strategy" rows="5" placeholder="Describe your strategy for implementing action plans, including how you will address potential challenges"></textarea>
             </div>
         </div>
     </div>
-
-    <script src="script.js"></script>
+    
+    <script src="ai_enhancement.js"></script>
+    <script>
+        // Update outcome text when learning outcomes are entered
+        document.getElementById('learning-outcome-1').addEventListener('input', function() {
+            document.getElementById('outcome-text-1').textContent = 
+                "Upon completion of this program, students will be able to " + this.value;
+        });
+        
+        // Example outcomes for quick testing
+        const exampleOutcomes = [
+            "understand the fundamental principles of the discipline.",
+            "analyze complex problems using appropriate theoretical frameworks and methodologies.",
+            "evaluate research findings and their implications for professional practice.",
+            "create innovative solutions to address challenges in the field."
+        ];
+        
+        // Add example button for demonstration purposes
+        const learningOutcomeSection = document.querySelector('.module-section');
+        const exampleBtn = document.createElement('button');
+        exampleBtn.className = 'secondary-btn';
+        exampleBtn.textContent = 'Load Example Outcomes';
+        exampleBtn.style.marginTop = '15px';
+        exampleBtn.style.padding = '8px 15px';
+        exampleBtn.style.backgroundColor = '#f0f0f0';
+        exampleBtn.style.border = '1px solid #ddd';
+        exampleBtn.style.borderRadius = '4px';
+        exampleBtn.style.cursor = 'pointer';
+        
+        exampleBtn.addEventListener('click', function() {
+            document.getElementById('learning-outcome-1').value = exampleOutcomes[0];
+            document.getElementById('learning-outcome-2').value = exampleOutcomes[1];
+            document.getElementById('learning-outcome-3').value = exampleOutcomes[2];
+            
+            // Trigger the input event to update outcome text
+            document.getElementById('learning-outcome-1').dispatchEvent(new Event('input'));
+        });
+        
+        learningOutcomeSection.appendChild(exampleBtn);
+    </script>
 </body>
 </html>
